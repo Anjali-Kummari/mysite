@@ -5,29 +5,28 @@ export default function decorate(block) {
     const question = item.children[0];
     const answer = item.children[1];
 
-    const text = question.innerText;
+    const text = question.textContent;
 
-    answer.style.display = "none";
+    answer.style.display = 'none';
 
-    question.style.cursor = "pointer";
-    question.style.fontWeight = "bold";
+    question.style.cursor = 'pointer';
+    question.style.fontWeight = 'bold';
+    question.textContent = `➕ ${text}`;
 
-    question.innerText = "➕ " + text;
-
-    question.addEventListener("click", () => {
-      const isOpen = answer.style.display === "block";
+    question.addEventListener('click', () => {
+      const isOpen = answer.style.display === 'block';
 
       items.forEach((i) => {
         const q = i.children[0];
         const a = i.children[1];
 
-        a.style.display = "none";
-        q.innerText = "➕ " + q.innerText.replace(/^➕ |^➖ /, "");
+        a.style.display = 'none';
+        q.textContent = `➕ ${q.textContent.replace(/^➕ |^➖ /, '')}`;
       });
 
       if (!isOpen) {
-        answer.style.display = "block";
-        question.innerText = "➖ " + text;
+        answer.style.display = 'block';
+        question.textContent = `➖ ${text}`;
       }
     });
   });
