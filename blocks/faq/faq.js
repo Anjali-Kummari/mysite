@@ -1,32 +1,37 @@
 export default function decorate(block) {
-  const items = [...block.children];
+  const items = Array.from(block.children);
 
   items.forEach((item) => {
     const question = item.children[0];
     const answer = item.children[1];
 
-    const text = question.textContent;
-
     answer.style.display = 'none';
+
+    const originalText = question.textContent;
 
     question.style.cursor = 'pointer';
     question.style.fontWeight = 'bold';
-    question.textContent = `➕ ${text}`;
+    question.textContent = `➕ ${originalText}`;
 
     question.addEventListener('click', () => {
       const isOpen = answer.style.display === 'block';
 
-      items.forEach((i) => {
-        const q = i.children[0];
-        const a = i.children[1];
+      items.forEach((entry) => {
+        const q = entry.children[0];
+        const a = entry.children[1];
 
         a.style.display = 'none';
-        q.textContent = `➕ ${q.textContent.replace(/^➕ |^➖ /, '')}`;
+
+        const cleanText = q.textContent
+          .replace('➕ ', '')
+          .replace('➖ ', '');
+
+        q.textContent = `➕ ${cleanText}`;
       });
 
       if (!isOpen) {
         answer.style.display = 'block';
-        question.textContent = `➖ ${text}`;
+        question.textContent = `➖ ${originalText}`;
       }
     });
   });
