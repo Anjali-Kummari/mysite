@@ -1,7 +1,7 @@
 .faq {
   max-width: 700px;
   margin: 40px auto;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 .faq > div {
