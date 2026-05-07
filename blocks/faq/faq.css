@@ -1,0 +1,22 @@
+.faq {
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial;
+}
+
+.faq > div {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq > div > div:first-child {
+  background: #f7f7f7;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.faq > div > div:last-child {
+  padding: 12px;
+}
