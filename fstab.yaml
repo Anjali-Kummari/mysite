@@ -1,4 +1,4 @@
 mountpoints:
   /:
-    url: "https://onedrive.live.com/?id=%2Fpersonal%2F4bd0eb211b79b7b7%2FDocuments%2FDocuments%2Fwebsite&viewid=ad7a6eae%2D08c2%2D4d25%2Db3fe%2Db1b31ee71881&view=0"
-    type: "sharepoint"
+    url: "https://drive.google.com/drive/folders/1Of29CQorbVZ9Io1M3UFGSZRuQUOi5B23"
+    type: "google"
